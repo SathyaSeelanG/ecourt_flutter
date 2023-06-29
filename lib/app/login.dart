@@ -1,5 +1,6 @@
 import 'package:ecourt/app/otp.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
 // import 'package:flutter_svg/svg.dart';
 
 import 'Registeration.dart';
@@ -119,7 +120,7 @@ class _LoginState extends State<Login> {
             // },
             // ),
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 30),
               child: Center(
                 child: Container(
                   width: 296,
@@ -186,9 +187,11 @@ class _LoginState extends State<Login> {
                 ),
             const Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
 
-              child: TextField(
+              child:  TextField(
+                  keyboardType: TextInputType.number,
+               
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
@@ -199,6 +202,9 @@ class _LoginState extends State<Login> {
                     // labelText: 'Email',
                     // suffixIcon: Icon(Icons.phone),
                     hintText: 'Enter Number'),
+
+                    // obscureText: true,
+                    // inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
               ),
             ),
             // const Padding(
@@ -215,7 +221,7 @@ class _LoginState extends State<Login> {
             //checkboc
 
             const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Text(
@@ -344,7 +350,7 @@ class _LoginState extends State<Login> {
             ),
 
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: EdgeInsets.symmetric(vertical: 5),
               child: Center(
                 child: Text(
                   "Or Login with",
@@ -356,7 +362,7 @@ class _LoginState extends State<Login> {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               child: Container(
                 // margin: const EdgeInsets.only(top: 25, left: 147),
                 child: TextButton(
@@ -374,13 +380,14 @@ class _LoginState extends State<Login> {
                       ),
                       SizedBox(
                           width:
-                              8), // Adjust the spacing between the image and text
+                              4), // Adjust the spacing between the image and text
                       Text(
                         'Google',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
                           fontFamily: 'Poppins',
+                          fontWeight:FontWeight.bold
                         ),
                       ),
                     ],
@@ -460,9 +467,9 @@ class _LoginState extends State<Login> {
 //   ),
 // ),
 
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 5,
+            // ),
             // const Text('Already a member? Log In'),
 
 // Container(
@@ -506,7 +513,7 @@ class _LoginState extends State<Login> {
             ),
 
             const SizedBox(
-              width: 40,
+              // width: 40,
               height: 30,
             ),
           ],

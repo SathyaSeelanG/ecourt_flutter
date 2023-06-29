@@ -1,3 +1,4 @@
+import 'package:ecourt/app/login.dart';
 import 'package:flutter/material.dart';
 // import 'HomePage.dart';
 
@@ -30,13 +31,12 @@ class _RegisterationState extends State<Registeration> {
   Widget build(BuildContext context) {
     return
     SafeArea(child:  Scaffold(
-
-
-
+extendBodyBehindAppBar: true,
       appBar: AppBar(
-  backgroundColor:Colors.white.withOpacity(1),
+  backgroundColor:Colors.transparent,
+  elevation: 0,
   leading: IconButton(
-    padding: const EdgeInsets.only(left: 10, top: 10),
+    padding: const EdgeInsets.only(left: 5, top: 10),
     icon: const Icon(
       Icons.arrow_back,
       color: Colors.black,
@@ -109,7 +109,7 @@ class _RegisterationState extends State<Registeration> {
                     width: 150,
                     height: 150,
                   decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: const Color.fromARGB(255, 20, 20, 20),
                         borderRadius: BorderRadius.circular(50.0)),
                     child: 
                     const Image(
@@ -143,8 +143,9 @@ class _RegisterationState extends State<Registeration> {
               //     left: 15.0, right: 15.0, top: 15, bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
 
-                obscureText: true,
+                // obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(  borderRadius: BorderRadius.all(
           Radius.circular(10),
@@ -158,6 +159,7 @@ class _RegisterationState extends State<Registeration> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 20, vertical:10) ,
               child: TextField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(  borderRadius: BorderRadius.all(
           Radius.circular(10),
@@ -345,10 +347,10 @@ class _RegisterationState extends State<Registeration> {
                   onTap: () {
                     // Handle "Sign up" button press
                     // You can navigate to the sign-up page or perform any desired action here
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const SignUpPage()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
                   },
                   child: const Text(
                     'Log In',

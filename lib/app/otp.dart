@@ -1,4 +1,5 @@
 
+import 'package:ecourt/app/search.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,14 +10,12 @@ class Otp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-
-              Container(
-  alignment: Alignment.topLeft,
-  child: IconButton(
-     padding: const EdgeInsets.only(left: 10,top: 10),
+        extendBodyBehindAppBar: true,
+           appBar: AppBar(
+            elevation:0.0,
+  backgroundColor:Colors.transparent,
+  leading: IconButton(
+    padding: const EdgeInsets.only(left: 5, top: 10),
     icon: const Icon(
       Icons.arrow_back,
       color: Colors.black,
@@ -27,6 +26,24 @@ class Otp extends StatelessWidget {
     },
   ),
 ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+
+//               Container(
+//   alignment: Alignment.topLeft,
+//   child: IconButton(
+//      padding: const EdgeInsets.only(left: 10,top: 10),
+//     icon: const Icon(
+//       Icons.arrow_back,
+//       color: Colors.black,
+//       size: 40,
+//     ),
+//     onPressed: () {
+//       Navigator.pop(context);
+//     },
+//   ),
+// ),
 
               // Padding(
               //   padding: const EdgeInsets.only(right: 360, top: 10),
@@ -148,13 +165,13 @@ const SizedBox(height: 20,),
               Row(
   children: [
     const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     ),
     for (int i = 0; i < 6; i++)
       Expanded(
         flex: 1, // Distribute available space equally among all containers
         child: Container(
-          margin: const EdgeInsets.only(right: 10),
+          margin: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(),
@@ -163,6 +180,7 @@ const SizedBox(height: 20,),
             maxLength: 1,
             keyboardType: TextInputType.number,
             textAlign: TextAlign.center,
+           
             style: TextStyle(fontSize: 20),
             decoration: InputDecoration(
               counterText: '',
@@ -201,10 +219,10 @@ const SizedBox(height: 20,),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const SignUpPage()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyWidget()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
